@@ -1,0 +1,30 @@
+extends ../layout.pug
+
+block content
+    h1.title Formulario de modificación de un post
+    form(method='POST' action='/posts/update')
+        .field
+            label(for='title').label Título
+            .control
+                input(type='text' name='title' required value=post.title).input.is-rounded.is-hovered
+        .field
+            label(for='content').label Cuerpo del post
+            .control
+                textarea(name="content" required).textarea.is-rounded.is-hovered= post.content
+        .field
+            label(for='category').label Categoría
+            .control
+                .select.is-rounded.is-hovered
+                    select#category(name="category")
+                        option(value="default" selected) Selecciona una categoría
+                        option(value="informatica") Informática
+                        option(value="telefonia") Telefonía
+                        option(value="hogar") Hogar Inteligente
+                        option(value="fotografia") Fotografía
+        .field
+            label(for='author').label Autor
+            .control
+                input(type='text' name="author" required value=post.author).input.is-rounded.is-hovered
+        .control
+            input(type='hidden' name="_id" value=post._id)
+            button.button.is-primary Publicar

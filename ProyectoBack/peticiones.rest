@@ -1,0 +1,20 @@
+## ----- API ------
+
+### Obtención de todos los post
+GET https://localhost:3000/api/posts
+
+### Obtención de un post concreto
+GET https://localhost:3000/api/posts/123
+
+### Creación de un nuevo post
+POST https://localhost:3000/api/posts
+
+### Edición de un post ya existente
+PUT https://localhost:3000/api/posts
+
+### Borrado de un post
+DELETE https://localhost:3000/api/posts
+
+## --- EXPRESS
+
+### 

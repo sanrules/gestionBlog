@@ -1,0 +1,29 @@
+extends ../layout.pug
+
+block content
+    h1.title Formulario de creación de un nuevo post
+    form(method='POST' action='/posts/new')
+        .field
+            label(for='title').label Título
+            .control
+                input(type='text' name='title' required).input.is-rounded.is-hovered
+        .field
+            label(for='content').label Cuerpo del post
+            .control
+                textarea(name="content" required).textarea.is-rounded.is-hovered
+        .field
+            label(for='category').label Categoría
+            .control
+                .select.is-rounded.is-hovered
+                    select(name="category")
+                        option(value="default" selected) Selecciona una categoría
+                        option(value="informatica") Informática
+                        option(value="telefonia") Telefonía
+                        option(value="hogar") Hogar Inteligente
+                        option(value="fotografia") Fotografía
+        .field
+            label(for='author').label Autor
+            .control
+                input(type='text' name="author" required).input.is-rounded.is-hovered
+        .control
+            button.button.is-primary Publicar

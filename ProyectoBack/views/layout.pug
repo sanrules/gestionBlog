@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')
+  body
+  nav.navbar.is-primary
+    .navbar-brand
+      a(role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasic").navbar-burger.burger
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+        span(aria-hidden="true")
+    #navbarBasic.navbar-menu
+      .navbar-start
+        a(href="/").navbar-item Página principal
+        a(href="/posts").navbar-item Todos los posts
+        a(href="/posts/new").navbar-item Crear un nuevo post
+  .container
+    block content
