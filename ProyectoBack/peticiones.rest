@@ -1,20 +1,31 @@
-## ----- API ------
-
 ### Obtención de todos los post
-GET https://localhost:3000/api/posts
+GET http://localhost:3000/api/posts
 
 ### Obtención de un post concreto
-GET https://localhost:3000/api/posts/123
+GET http://localhost:3000/api/posts/5fa1947e24b2e6edf59c0884
 
 ### Creación de un nuevo post
-POST https://localhost:3000/api/posts
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+    "title" : "segundo post",
+    "content" : "contenido de prueba",
+    "author" : "Yo Misma",
+    "category" : "informatica"
+}
 
 ### Edición de un post ya existente
-PUT https://localhost:3000/api/posts
+PUT http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+    "_id": "5fa43a9d862f7b698b89d749",
+    "title" : "tercer post",
+    "content" : "contenido de prueba",
+    "author" : "Yo Misma",
+    "category" : "informatica"
+}
 
 ### Borrado de un post
-DELETE https://localhost:3000/api/posts
-
-## --- EXPRESS
-
-### 
+DELETE http://localhost:3000/api/posts/5fa43a00ee602267b673eb52
