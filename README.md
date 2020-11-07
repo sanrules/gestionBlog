@@ -1,3 +1,5 @@
-# gestionBlog
+# Proyecto final MEAN
 
-Parte node + express -> Heroku https://gestion-blog.herokuapp.com/posts
+- Node + Express -> Heroku https://gestion-blog.herokuapp.com/posts
+- Angular -> Firebase https://blog-proyectofinal.web.app/posts
+- Base de datos -> MongoDB Atlas
