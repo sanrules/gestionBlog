@@ -6,15 +6,15 @@ block content
         .field
             label(for='title').label Título
             .control
-                input(type='text' name='title' required).input.is-rounded.is-hovered
+                input(type='text' name='title' required).input.is-hovered
         .field
             label(for='content').label Cuerpo del post
             .control
-                textarea(name="content" required).textarea.is-rounded.is-hovered
+                textarea(name="content" required).textarea.is-hovered
         .field
             label(for='category').label Categoría
             .control
-                .select.is-rounded.is-hovered
+                .select.is-hovered
                     select(name="category")
                         option(value="default" selected) Selecciona una categoría
                         option(value="informatica") Informática
@@ -24,6 +24,6 @@ block content
         .field
             label(for='author').label Autor
             .control
-                input(type='text' name="author" required).input.is-rounded.is-hovered
+                input(type='text' name="author" required).input.is-hovered
         .control
             button.button.is-primary Publicar

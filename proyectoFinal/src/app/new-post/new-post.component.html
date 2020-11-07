@@ -1,46 +1,51 @@
-<div class="row">
+<div class="row mb-5">
   <div *ngIf="!isNew" class='col-8'>
-    <h4> Se está editando el post {{post.title}}</h4>
+    <h4> Formulario de edición de posts </h4>
   </div>
   <div *ngIf="isNew" class='col-8'>
-    <h4> Creación de un nuevo post </h4>
+    <h4> Formulario de creación de un nuevo post </h4>
   </div>
-  <div class="col-8 mt-2">
+  <div class="col-10 mt-2">
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label>Título</label>
         <input type="text" class="form-control" formControlName='title'>
-        <p class=" error" *ngIf="formulario.get('title').hasError('required') && formulario.get('title').touched">
+        <p class="error font-weight-light text-warning"
+          *ngIf="formulario.get('title').hasError('required') && formulario.get('title').touched">
           El campo título es obligatorio
         </p>
       </div>
       <div class="form-group">
         <label>Contenido</label>
-        <textarea class="form-control" formControlName='content'> </textarea>
-        <p class=" error" *ngIf="formulario.get('content').hasError('required') && formulario.get('content').touched">
+        <textarea class="form-control" formControlName='content' rows='15'> </textarea>
+        <p class=" error font-weight-light text-warning"
+          *ngIf="formulario.get('content').hasError('required') && formulario.get('content').touched">
           El campo contenido es obligatorio
         </p>
-        <p class="error" *ngIf="formulario.get('content').hasError('minlength') && formulario.get('content').touched">
+        <p class="error font-weight-light text-warning"
+          *ngIf="formulario.get('content').hasError('minlength') && formulario.get('content').touched">
           El campo contenido debe tener un mínimo de 10 caracteres
         </p>
       </div>
       <div class="form-group">
         <label>Autor</label>
         <input type="text" class="form-control" formControlName='author'>
-        <p class="error" *ngIf="formulario.get('author').hasError('required') && formulario.get('author').touched">
+        <p class="error font-weight-light text-warning"
+          *ngIf="formulario.get('author').hasError('required') && formulario.get('author').touched">
           El campo autor es obligatorio
         </p>
       </div>
       <div class="form-group">
         <label>Categoría</label>
-        <select formControlName='category'>
+        <select class='form-control' formControlName='category'>
           <option value=''> Selecciona una opción </option>
           <option value='informatica'> Informática </option>
           <option value='telefonia'> Telefonía </option>
           <option value='hogar'> Hogar Inteligente </option>
           <option value='fotografia'> Fotografía </option>
         </select>
-        <p class="error" *ngIf="formulario.get('category').hasError('required') && formulario.get('category').touched">
+        <p class="error font-weight-light text-warning"
+          *ngIf="formulario.get('category').hasError('required') && formulario.get('category').touched">
           El campo categoría tiene que tener un valor
         </p>
       </div>

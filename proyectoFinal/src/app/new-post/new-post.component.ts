@@ -46,13 +46,12 @@ export class NewPostComponent implements OnInit {
         }).catch((err) => {
           console.log(err);
         });
-    } else {
-      Object.keys(this.formulario.controls).forEach(key => {
-        if (key !== '_id') {
-          this.formulario.controls[key].setValidators(Validators.required);
-        }
-      });
     }
+    Object.keys(this.formulario.controls).forEach(key => {
+      if (key !== '_id') {
+        this.formulario.controls[key].setValidators(Validators.required);
+      }
+    });
   }
 
   onSubmit() {

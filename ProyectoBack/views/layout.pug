@@ -7,15 +7,16 @@ html
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')
   body
   nav.navbar.is-primary
-    .navbar-brand
+    .navbar-brand.mr-6.ml-6 
+      .navbar-item.is-size-3 BLOG
       a(role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasic").navbar-burger.burger
         span(aria-hidden="true")
         span(aria-hidden="true")
         span(aria-hidden="true")
     #navbarBasic.navbar-menu
-      .navbar-start
+      .navbar-start.is-family-code
         a(href="/").navbar-item Página principal
         a(href="/posts").navbar-item Todos los posts
         a(href="/posts/new").navbar-item Crear un nuevo post
-  .container
+  .container.mt-4
     block content

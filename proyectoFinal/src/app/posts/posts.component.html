@@ -1,6 +1,6 @@
-<h2 class='mb-4'> Todas las entradas del blog </h2>
+<h2 class='mb-4 text-center'> Todas las entradas del blog </h2>
 <div class='card mb-4' *ngFor="let post of posts">
-  <div class="card-body" (click)='navigate(post._id)'>
+  <div class="card-body" [routerLink]="['/posts/' + post._id]">
     <h4 class=' card-title'> {{post.title | uppercase }} </h4>
     <p class='card-text text-justify' [ngClass]="{'truncate': post.content.length> 100}"> {{ post.content }} </p>
     <a class="badge badge-light" *ngIf="
@@ -9,8 +9,8 @@
   <div class='card-footer text-muted align-middle'>
     <small> <strong> {{post.author}} </strong> | {{post.date | date:'dd/MM/yyyy hh:mm'}} </small>
     <div class="btn-group float-right" role="group">
-      <button class='btn btn-outline-primary btn-sm' (click)='edit(post._id)'> Editar </button> <button
-        class='btn btn-sm btn-outline-danger' (click)='borrar(post._id)'> Borrar </button>
+      <button class='btn btn-outline-success btn-sm' [routerLink]="['/posts/edit/' + post._id]"> Editar </button>
+      <button class='btn btn-sm btn-outline-danger' (click)='borrar(post._id)'> Borrar </button>
     </div>
     <div> <span
         [ngClass]="{'badge-secondary': post.category == 'informatica', 'badge-primary': post.category == 'hogar',  'badge-success': post.category == 'telefonia', 'badge-info': post.category == 'fotografia'}"

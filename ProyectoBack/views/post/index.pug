@@ -1,21 +1,12 @@
 extends ../layout.pug
 
 block content
-    h1.title Todos los posts
+    h1.title.has-text-centered.is-uppercase Todos los posts
     .posts
         each post in posts.length ? posts: "No existen posts, crea uno ahora"
             .box 
                 article.media
                     .media-content
-                        .content
-                            h3.subtitle= post.title
-                            p= post.content
-                            p
-                                strong= post.author
-                                span 
-                                small= moment(post.date).format('DD/MM/YYYY hh:mm')
-                                span  #
-                                small= post.category
                         .level-right
                             a(href='posts/edit/'+post._id).level-item
                                 span.icon
@@ -23,3 +14,12 @@ block content
                             a(href='posts/delete/'+post._id onclick="return confirm('Se borrará el post. Esta acción no se puede deshacer')").level-item
                                 span.icon.has-text-danger
                                     i.fas.fa-trash
+                        .content.is-clickable
+                            h3.subtitle.is-uppercase.is-family-code= post.title
+                            p.has-text-justified= post.content
+                            p
+                                strong= post.author
+                                span 
+                                small= moment(post.date).format('DD/MM/YYYY hh:mm')
+                                span  #
+                                small= post.category

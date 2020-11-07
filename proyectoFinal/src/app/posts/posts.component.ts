@@ -25,14 +25,6 @@ export class PostsComponent implements OnInit {
     }
   }
 
-  navigate(id) {
-    this.router.navigate(['posts/' + id]);
-  }
-
-  edit(id) {
-    this.router.navigate(['posts/edit/' + id]);
-  }
-
   borrar(id) {
     if (window.confirm('¿Desea borrar el post? Esta acción no se puede deshacer')) {
       this.apiService.deletePost(id)
