@@ -33,7 +33,7 @@ router.get('/posts/:id', check("id").isMongoId(), async (req, res) => {
 
 router.post('/posts', [
     check('title').notEmpty(),
-    check('description').notEmpty(),
+    check('category').notEmpty(),
     check('author').notEmpty(),
 ], async (req, res) => {
 
@@ -53,11 +53,7 @@ router.post('/posts', [
     }
 });
 
-router.put('/posts', [
-    check('title').notEmpty(),
-    check('description').notEmpty(),
-    check('author').notEmpty(),
-], async (req, res) => {
+router.put('/posts', async (req, res) => {
 
     const erroresValidacion = validationResult(req);
     if (!erroresValidacion.isEmpty()) {

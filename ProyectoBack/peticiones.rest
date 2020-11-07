@@ -1,11 +1,15 @@
 ### Obtención de todos los post
 GET http://localhost:3000/api/posts
 
+###
+
+GET https://gestion-blog.herokuapp.com/api/posts
+
 ### Obtención de un post concreto
 GET http://localhost:3000/api/posts/5fa1947e24b2e6edf59c0884
 
 ### Creación de un nuevo post
-POST http://localhost:3000/api/posts
+POST https://gestion-blog.herokuapp.com/api/posts
 Content-Type: application/json
 
 {

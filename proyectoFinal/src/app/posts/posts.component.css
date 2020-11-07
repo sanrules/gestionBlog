@@ -1,0 +1,14 @@
+.card-body {
+  cursor: pointer;
+}
+
+.card-body:hover {
+  background-color: rgb(236, 248, 225);
+}
+
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
